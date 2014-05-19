@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>My First Static Site Generator</title>
+    </head>
+
+    <body>
+    <div id="content" style="width:500px; margin: 0 auto">
+        {% if content %}
+            {{ content }}
+        {% else %}
+            <h1>Posts so far</h1>
+            <ul>
+                {% for post in site %}
+                    {% if post != "index.html" %}
+                    <li><a href="{{ post }}">{{ post }}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+    </body>
+</html>
